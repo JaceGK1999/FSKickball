@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchPlayerById } from '../../services/fetchPlayers';
+import { fetchPlayers } from '../../services/fetchPlayers';
 export default function Players() {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     const getPlayers = async () => {
-      const data = await fetchPlayerById();
+      const data = await fetchPlayers();
       setPlayers(data);
     };
     getPlayers();
