@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchPlayerById } from '../services/Players';
+import { fetchPlayerById } from '../services/fetchPlayers';
 export default function Players() {
   const [players, setPlayers] = useState([]);
 
