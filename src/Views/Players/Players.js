@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { fetchPlayerById } from '../services/fetchPlayers';
+import { Link } from 'react-router-dom';
+import { fetchPlayerById } from '../../services/fetchPlayers';
 export default function Players() {
   const [players, setPlayers] = useState([]);
 
@@ -14,9 +15,15 @@ export default function Players() {
   return (
     <div>
       <h3>This is all of the players!!</h3>
-      {players.map((item) => (
-        <p key={item.id}>{item.name}</p>
-      ))}
+      <ul>
+        {players.map((item) => (
+          <li key={item.id}>
+            <Link to={`/players/${item.id}`}>{item.name}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+// key={item.id}>{item.name}

@@ -3,9 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import { Home } from './Views/Home';
-import Players from './Views/Players';
+import Players from './Views/Players/Players';
 import Header from './Views/Header';
 import Teams from './Views/Teams';
+import Player from './Views/Players/Player';
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
         <Route exact path="/players">
           <Players />
         </Route>
-        {/* <Route path="/players/:id" /> */}
+        <Route path="/players/:id">
+          <Player />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
