@@ -11,7 +11,6 @@ export default function Team() {
     const getTeam = async () => {
       const data = await fetchTeamById(id);
       setTeam(data);
-      console.log(data, 'data');
     };
     getTeam();
   }, [id]);
