@@ -11,3 +11,10 @@ export async function fetchPlayerById(id) {
 
   return checkError(resp);
 }
+
+
+export async function fetchPlayerByTeamId(team_id) {
+  const resp = await client.from('players').select('*, teams (*)').match({ team_id }).single();
+
+  return checkError(resp);
+}

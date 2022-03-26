@@ -5,8 +5,9 @@ import { Switch } from 'react-router-dom';
 import { Home } from './Views/Home';
 import Players from './Views/Players/Players';
 import Header from './Views/Header';
-import Teams from './Views/Teams';
+import Teams from './Views/Teams/Teams';
 import Player from './Views/Players/Player';
+import Team from './Views/Teams/Team';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         <Route exact path="/teams">
           <Teams />
         </Route>
-        {/* <Route path="/teams/:id" /> */}
+        <Route path="/teams/:id">
+          <Team />
+        </Route>
         <Route exact path="/players">
           <Players />
         </Route>
